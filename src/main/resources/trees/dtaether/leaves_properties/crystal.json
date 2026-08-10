@@ -1,5 +1,5 @@
-{
-  "type": "dtaddon_lib:particle",
+﻿{
+  "type": "dtaether:particle",
   "primitive_leaves": "aether:crystal_leaves",
   "texture_overrides": {
     "leaves": "aether:block/natural/crystal_leaves"

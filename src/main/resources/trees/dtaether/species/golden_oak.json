@@ -1,4 +1,4 @@
-{
+﻿{
   "type": "dtaether:mod_dependent",
   "family": "dtaether:skyroot",
   "tapering": 0.6,
@@ -21,7 +21,7 @@
   ],
   "features" : [
     {
-      "name": "dtaddon_lib:alt_branch",
+      "name": "dtaether:alt_branch",
       "properties": {
         "alternative_branch_block": "dtaether:imbued_skyroot_branch",
         "worldgen_place_chance": 0.8,

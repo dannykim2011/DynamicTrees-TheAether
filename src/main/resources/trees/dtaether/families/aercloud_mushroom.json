@@ -1,5 +1,5 @@
 {
-  "only_if_loaded": "deep_aether",
+  "only_if_loaded": ["deep_aether", "dynamictreesplus"],
   "type": "dtaether:drop_logs_mushroom",
   "common_cap": "dtaether:blue_aercloud_mushroom",
   "common_species": "dtaether:blue_aercloud_mushroom",

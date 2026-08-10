@@ -1,4 +1,8 @@
-{
+﻿{
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "deep_aether" },
+    { "type": "neoforge:mod_loaded", "modid": "dynamictreesplus" }
+  ],
   "type": "minecraft:block",
   "pools": [
     {

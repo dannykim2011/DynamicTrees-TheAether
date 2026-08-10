@@ -91,7 +91,6 @@ sourceSets.main.resources {
 dependencies {
     implementation "com.dtteam.dynamictrees:dynamictrees-neoforge-${minecraft_version}:${dynamic_trees_version}"
     implementation "com.dtteam.dynamictreesplus:DynamicTreesPlus:${dynamic_trees_plus_version}"
-    implementation "maven.modrinth:dynamic-trees-addon-lib:${dynamic_trees_addon_lib_version}"
     implementation "curse.maven:aether-255308:${aether_file_id}"
 }
 
@@ -114,7 +113,6 @@ tasks.withType(ProcessResources).configureEach {
             mod_description                      : mod_description,
             dynamic_trees_version_range          : dynamic_trees_version_range,
             dynamic_trees_plus_version_range     : dynamic_trees_plus_version_range,
-            dynamic_trees_addon_lib_version_range: dynamic_trees_addon_lib_version_range,
             aether_version_range                 : aether_version_range,
             deep_aether_version_range            : deep_aether_version_range,
             gravitation_version_range            : gravitation_version_range

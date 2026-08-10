@@ -1,29 +1,24 @@
 package com.dtteam.dtaether.init;
 
 import com.dtteam.dynamictrees.event.TypeRegistryEvent;
+import com.dtteam.dynamictrees.event.RegistryEvent;
 import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
 import com.dtteam.dynamictrees.block.soil.SoilProperties;
-import com.dtteam.dynamictrees.systems.BranchConnectables;
 import com.dtteam.dynamictrees.systems.genfeature.GenFeature;
+import com.dtteam.dynamictrees.systems.growthlogic.GrowthLogicKit;
 import com.dtteam.dynamictrees.tree.family.Family;
 import com.dtteam.dynamictrees.tree.species.Species;
-import com.dtteam.dynamictrees.block.CommonVoxelShapes;
 import com.dtteam.dtaether.DynamicTreesAether;
 import com.dtteam.dtaether.blocks.*;
 import com.dtteam.dtaether.genfeatures.DTAetherGenFeatures;
+import com.dtteam.dtaether.growthlogic.DTAetherGrowthLogicKits;
 import com.dtteam.dtaether.trees.ImbuedLogFamily;
 import com.dtteam.dtaether.trees.ModDependentSpecies;
 import com.dtteam.dtaether.world.DynamicCrystalIslandFeature;
-import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -36,18 +31,28 @@ public class DTAetherRegistries {
     public static void setup(IEventBus modBus) {
         FEATURES.register(modBus);
         DTAetherGenFeatures.register(GenFeature.REGISTRY);
+        DTAetherGrowthLogicKits.register(GrowthLogicKit.REGISTRY);
         Species.REGISTRY.registerType(DynamicTreesAether.location("mod_dependent"), ModDependentSpecies.TYPE);
         Family.REGISTRY.registerType(DynamicTreesAether.location("imbued_log"), ImbuedLogFamily.TYPE);
         SoilProperties.REGISTRY.registerType(DynamicTreesAether.location("alt_tint"), AltTintSoilProperties.TYPE);
+        LeavesProperties.REGISTRY.registerType(DynamicTreesAether.location("particle"), ParticleLeavesProperties.TYPE);
+        LeavesProperties.REGISTRY.registerType(DynamicTreesAether.location("scruffy_particle"), ScruffyParticleLeavesProperties.TYPE);
     }
 
     public static void setupBlocks() {
     }
 
     @SubscribeEvent
-    public static void onGenFeatureRegistry (final com.dtteam.dynamictrees.event.RegistryEvent<GenFeature> event) {
+    public static void onGenFeatureRegistry (final RegistryEvent<GenFeature> event) {
         if (event.isEntryOfType(GenFeature.class)) {
             DTAetherGenFeatures.register(event.getRegistry());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onGrowthLogicKitRegistry(final RegistryEvent<GrowthLogicKit> event) {
+        if (event.isEntryOfType(GrowthLogicKit.class)) {
+            DTAetherGrowthLogicKits.register(event.getRegistry());
         }
     }
 
@@ -75,6 +80,8 @@ public class DTAetherRegistries {
     @SubscribeEvent
     public static void registerLeavesPropertiesTypes (final TypeRegistryEvent<LeavesProperties> event) {
         if (event.isEntryOfType(LeavesProperties.class)) {
+            event.registerType(DynamicTreesAether.location("particle"), ParticleLeavesProperties.TYPE);
+            event.registerType(DynamicTreesAether.location("scruffy_particle"), ScruffyParticleLeavesProperties.TYPE);
         }
     }
 

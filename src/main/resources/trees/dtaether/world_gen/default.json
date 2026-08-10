@@ -167,7 +167,7 @@
     }
   },
   {
-    "only_if_loaded": "deep_aether",
+    "only_if_loaded": ["deep_aether", "dynamictreesplus"],
     "select" : { "name": "deep_aether:overgrown_cloud" },
     "apply" : {
       "species" : {

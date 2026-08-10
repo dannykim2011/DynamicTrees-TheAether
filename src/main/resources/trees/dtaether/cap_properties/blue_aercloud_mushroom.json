@@ -1,5 +1,5 @@
 {
-  "only_if_loaded": "deep_aether",
+  "only_if_loaded": ["deep_aether", "dynamictreesplus"],
   "type": "dtaether:drop_blocks_cap",
   "primitive_cap": "deep_aether:blue_aercloud_mushroom_block",
   "material_color": "COLOR_LIGHT_BLUE",

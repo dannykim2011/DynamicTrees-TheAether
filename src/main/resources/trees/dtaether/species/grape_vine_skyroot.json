@@ -1,4 +1,4 @@
-{
+﻿{
   "only_if_loaded": "ancient_aether",
   "family": "dtaether:skyroot",
   "tapering": 0.3,
@@ -13,7 +13,7 @@
   "always_show_on_waila": false,
   "features" : [
     {
-      "name": "dtaddon_lib:vines_on_trunk",
+      "name": "dtaether:vines_on_trunk",
       "properties": {
         "block": "ancient_aether:grape_vine"
       }

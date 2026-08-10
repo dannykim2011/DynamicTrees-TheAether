@@ -1,4 +1,4 @@
-{
+﻿{
   "only_if_loaded": "deep_aether",
   "family": "dtaether:sunroot",
   "tapering": 0.3,
@@ -25,7 +25,7 @@
       }
     },
     {
-      "name": "dtaddon_lib:hanger_vines",
+      "name": "dtaether:hanger_vines",
       "properties": {
         "block": "deep_aether:sunroot_hanger",
         "max_length": 5,
